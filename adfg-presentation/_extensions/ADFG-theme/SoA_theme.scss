@@ -1,0 +1,189 @@
+/*-- scss:defaults --*/
+
+// SoA website themes
+$theme-navy: #072f49;
+$theme-carolina: #3F78A7;
+$theme-argentina: #b5d8f2;
+$theme-gold: #edbd03;
+$theme-offwhite: #f2f2f2;
+$theme-blood: #ba141a;
+$theme-transparent: #ffffff00;
+
+// SoA website fonts
+$font-family-sans-serif: Arial, Helvetica, Verdana, sans-serif, serif !default;
+$font-family-serif: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$presentation-font-size-root: 40px;
+
+// colors
+$body-color: $theme-navy !default;
+$body-bg: $theme-offwhite !default;
+$code-color: $theme-blood !default;
+
+// headings
+$presentation-heading-font: $font-family-sans-serif !default;
+$presentation-heading-color: $body-color !default;
+
+// code blocks
+$code-block-bg: $body-bg !default;
+$code-block-border-color: $body-bg !default;
+$code-block-font-size: $presentation-font-size-root*.5 !default;
+
+// borders
+$border-color: $theme-gold;
+$border-width: 5px;
+
+/*-- scss:rules --*/
+
+// blue box background for slide text
+@mixin text-box {
+  background-color: $theme-carolina;
+  opacity: .85;
+  border-radius: 30px;
+  color: $theme-offwhite;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+// custom logo position on title slide
+@mixin logo {
+  background-image: url(../../../../../ADFG-logo.png);
+  background-size: 12%;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  padding-bottom: 2%;
+}
+
+// horizontal rule
+@mixin horizontal-rule {
+  content: "";
+  display: block;
+  border: none;
+  background-color: $theme-gold;
+  color: $theme-gold;
+  height: 4px;
+  margin: 0px 0px 0px 0px;
+}
+hr {
+  @include horizontal-rule
+}
+
+// custom title slide
+#title-slide {
+    display: grid !important;
+    height: 80% !important;
+    padding-bottom: 5%;
+    text-align: left !important;
+    .title {
+      font-size: $presentation-font-size-root*2;
+      font-family: $font-family-serif !important;
+    }
+    .subtitle { 
+      @include text-box;
+      font-size: $presentation-font-size-root*.9;
+      text-align: center;
+      color: $theme-gold !important;
+    }
+    .quarto-title-affiliation,
+    .quarto-title-author-email {
+      font-size: $code-block-font-size;
+      font-weight: 700;
+    }
+    .quarto-title-authors {
+      justify-content: left !important;
+      font-family: $font-family-serif;
+      font-size: $presentation-font-size-root;
+      .quarto-title-author {
+        text-align: right;
+      }
+      @include logo;
+    }
+    .date::before {
+      @include horizontal-rule;
+      text-align: left;
+      color: $theme-navy;
+      font-family: $font-family-serif !important;
+      font-style: italic;
+      content: "Alaska Department of Fish & Game";
+  }
+  .date {
+    text-align: right;
+  }
+}
+
+
+// slide class with banner header
+.banner-header {
+  h2::before {
+    @include horizontal-rule;
+    width: 200vw;
+    position: relative;
+    left: -20vw;
+  }
+  h2 {
+    color: $theme-offwhite !important;
+    background-color: $theme-navy !important;
+    width: 200vw;
+    position: relative;
+    left: -20vw;
+    padding-left: 20vw;
+    padding-right: 20vw;
+  }  
+  h2::after {
+    @include horizontal-rule;
+    width: 200vw;
+    position: relative;
+    left: -20vw;
+  }
+}
+
+// slide class with a simple horizontal rule under header
+.rule-header {
+  h2::after {
+    @include horizontal-rule;
+    background-color: $theme-navy;
+  }
+}
+
+// apply SoA website background image to all slides
+.slide-background {
+  background-image: url(../../../../../SoA-background.jpg);
+  background-size: cover;
+}
+
+// text box class
+.text-box {
+  @include text-box;
+  box-shadow: 0px 0px 2.5px 5px $theme-carolina;
+}
+
+// text box with emphasis
+.emphasis-box {
+  @include text-box;
+  border: 3pt solid $theme-gold;
+}
+
+// class to center content in slide or column
+.center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.figure-box {
+  background-color: white;
+  border-radius: 30px;
+  color: $theme-navy;
+  padding-left: 3%;
+  padding-right: 3%;
+  box-shadow: 0px 0px 7.5px 10px white;
+}
+
+.highlight {
+  background-color: $theme-gold;
+  color: $theme-navy;
+}
+

@@ -1,0 +1,124 @@
+---
+title: ADFG Presentation 
+subtitle: A Very Important Communication of Fish and/or Wildlife Science and/or Policy
+author:
+  - name: John Doe
+    email: john.doe@alaska.gov
+    affiliations: Commercial Fisheries
+  - name: Jane Doe
+    email: jane.doe@alaska.gov
+    affiliations: Sport Fish
+format:
+  ADFG-theme-revealjs: default 
+date: last-modified
+date-format: long
+---
+
+## Header 2 with banner {.banner-header}
+
+### Header 3
+
+#### Header 4
+
+Create a slide with class `.banner-header` using the following syntax
+
+```default
+## Banner Title {.banner-header}
+```
+
+The following slide's header as horizontal rule but no banner
+
+```default
+## Banner Title {.rule-header}
+```
+
+---
+
+## Header 2 with rule, no banner  {.rule-header .r-stretch}
+
+::: {.text-box}
+For increased text visibility, use a div with class `.text-box`.
+:::
+
+```default
+::: {.text-box}
+For increased text visibility, use a div with class `.text-box`.
+:::
+```
+
+::: {.emphasis-box}
+For further emphasis, use a div with class `.emphasis-box`.
+:::
+
+```default
+::: {.emphasis-box}
+For further emphasis, use a div with class `.emphasis-box`.
+:::
+```
+
+---
+
+## Header 2, no rule or banner
+
+::: {.text-box .nonincremental}
+Lists are a great way to:
+
+  * itemize information in an easily digestible way
+  * reveal information incrementally to not overwhelm your audience with too much information at once
+    - use `.incremental` class in div attributes
+  * prompt yourself when presenting
+
+Highlight <span class="highlight">key</span> words using a <span class="highlight">span</span> with class `.highlight`
+:::
+
+---
+
+::: {.center}
+(*this is a slide with no header or content*)
+:::
+
+---
+
+## Columns
+
+:::: {.columns}
+
+::: {.column width="40%" .text-box}
+Sometimes it is nice to display information side-by-side
+
+Here is some text describing interesting features of the data
+:::
+
+::: {.column width="50%"}
+
+:::{.figure-box .center}
+| fruit  | price  |
+|--------|--------|
+| apple  | 2.05   |
+| pear   | 1.37   |
+| orange | 3.09   |
+:::
+
+:::
+
+::::
+
+---
+
+::: {.figure-box .center}
+
+``` {r}
+#| fig-align: center
+#| fig-cap: Use the `.figure-box` class to create a white box to display white- or transparent-background tables and figures
+
+library(ggplot2)
+ggplot(data = mtcars) +
+  geom_point(aes(x = wt, y = mpg, shape = factor(cyl)), size = 2) +
+  theme_bw(base_size = 20)
+```
+
+:::
+
+---
+
+
