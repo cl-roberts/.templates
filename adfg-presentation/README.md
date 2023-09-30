@@ -19,7 +19,7 @@ usage via the following entry to your Reveal.js presentation's YAML:
 
 ```yaml
 format:
-  SoA-theme-revealjs: default 
+  ADFG-theme-revealjs: default 
 ```
 
 Alternatively, the following shell command
@@ -28,7 +28,8 @@ Alternatively, the following shell command
 quarto use template cl-roberts/ADFG-theme
 ```
 
-will install the extension and create a template qmd file that you can use as a starting place for your presentation.
+will install the extension and create a template qmd file that you can use as a 
+starting place for your presentation.
 
 ## Customization
 
