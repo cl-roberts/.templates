@@ -173,6 +173,7 @@ hr {
   height: 90%;
 }
 
+// white box as a backdrop to tables and figures
 .figure-box {
   background-color: white;
   border-radius: 30px;
@@ -182,8 +183,22 @@ hr {
   box-shadow: 0px 0px 7.5px 10px white;
 }
 
+// custom text highlighting
 .highlight {
   background-color: $theme-gold;
   color: $theme-navy;
 }
 
+// figure caption sizes
+.reveal {
+  .slides {
+    .slide {
+      p {
+        font-size: $presentation-font-size-root*.5;
+      }
+      img+p.caption {
+        font-size: $presentation-font-size-root*.25;
+      }
+    }
+  }
+}
