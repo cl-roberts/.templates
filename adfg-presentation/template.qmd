@@ -12,6 +12,8 @@ format:
   ADFG-theme-revealjs: default 
 date: last-modified
 date-format: long
+# fragments: false        # uncomment to toggle off incrementation
+# incremental: false 
 ---
 
 ## Header 2 with banner {.banner-header}
