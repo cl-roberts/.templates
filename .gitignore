@@ -56,9 +56,9 @@ README_files/*
 template_files/*
 
 # assets created in root directory
-ADFG-logo.png  
-SoA-background.jpg
-AK-flag.svg
+./ADFG-logo.png  
+./SoA-background.jpg
+./AK-flag.svg
 
 # r script for making template gif
 make-template-example-gif.r
