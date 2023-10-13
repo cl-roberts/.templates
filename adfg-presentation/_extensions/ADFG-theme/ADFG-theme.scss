@@ -13,13 +13,13 @@ $theme-transparent: #ffffff00;
 $font-family-sans-serif: Arial, Helvetica, Verdana, sans-serif, serif !default;
 $font-family-serif: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif !default;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-
 $presentation-font-size-root: 40px;
 
 // colors
 $body-color: $theme-navy !default;
 $body-bg: $theme-offwhite !default;
 $code-color: $theme-blood !default;
+$link-color: $theme-blood !default;
 
 // headings
 $presentation-heading-font: $font-family-sans-serif !default;
@@ -34,7 +34,13 @@ $code-block-font-size: $presentation-font-size-root*.5 !default;
 $border-color: $theme-gold;
 $border-width: 5px;
 
+// callout icon
+$icon: url('../../../../../AK-flag.svg') !default;
+
+
 /*-- scss:rules --*/
+
+// mixins
 
 // blue box background for slide text
 @mixin text-box {
@@ -65,11 +71,22 @@ $border-width: 5px;
   height: 4px;
   margin: 0px 0px 0px 0px;
 }
+
+// center content
+@mixin center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+// horizontal rule
 hr {
   @include horizontal-rule
 }
 
-// custom title slide
+// title slide attributes
 #title-slide {
     display: grid !important;
     height: 80% !important;
@@ -78,6 +95,7 @@ hr {
     .title {
       font-size: $presentation-font-size-root*2;
       font-family: $font-family-serif !important;
+      text-align: left !important;
     }
     .subtitle { 
       @include text-box;
@@ -112,6 +130,11 @@ hr {
   }
 }
 
+.slides {
+  h1 {
+    @include center;
+  }
+}
 
 // slide class with banner header
 .banner-header {
@@ -166,11 +189,7 @@ hr {
 
 // class to center content in slide or column
 .center {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90%;
+  @include center;
 }
 
 // white box as a backdrop to tables and figures
@@ -189,16 +208,66 @@ hr {
   color: $theme-navy;
 }
 
-// figure caption sizes
+// make figure captions smaller
 .reveal {
   .slides {
     .slide {
-      p {
+      figcaption {
         font-size: $presentation-font-size-root*.5;
       }
-      img+p.caption {
-        font-size: $presentation-font-size-root*.25;
-      }
     }
+  }
+}
+
+// custom table attributes
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: $theme-navy !important;
+  caption {
+    text-align: left;
+    caption-side: bottom;
+  }
+  th {
+    color: $theme-navy !important;
+  }
+}
+.reveal table, tbody, tr, td, th {
+  border: none !important;
+}
+.reveal thead {
+  border-top: 1px solid $theme-navy !important;
+}
+.reveal tbody {
+  border-top: 1px solid $theme-navy !important;
+  border-bottom: 1px solid $theme-navy !important;
+}
+
+// custom progress bar
+.reveal .progress {
+  background: $theme-transparent;
+  color: $theme-gold;
+  height: .5%;
+}
+
+// custom callout box
+.reveal div.callout.callout-style-default {
+  background-color: $theme-offwhite;
+}
+
+.reveal div.callout.callout-note {
+  color: $theme-navy;
+  border-color: $theme-offwhite;
+  border-left-color: $theme-gold !important;
+  .callout-title {
+    color: $theme-offwhite;
+    background-color: $theme-navy;
+    padding-left: 7.5%;
+  }
+  .callout-icon::before {
+    background-image: $icon !important;
+    padding-left: 40%;
+    scale: 2 1.75;
   }
 }

@@ -60,7 +60,7 @@ For further emphasis, use a div with class `.emphasis-box`.
 
 ## Header 2, no rule or banner
 
-::: {.text-box .nonincremental}
+::: {.text-box .incremental}
 Lists are a great way to:
 
   * itemize information in an easily digestible way
@@ -68,7 +68,7 @@ Lists are a great way to:
     - use `.incremental` class in div attributes
   * prompt yourself when presenting
 
-Highlight <span class="highlight">key</span> words using a <span class="highlight">span</span> with class `.highlight`
+Highlight [key words]{.highlight} using a [span]{.highlight} with class `.highlight`
 :::
 
 ---
@@ -87,16 +87,28 @@ Highlight <span class="highlight">key</span> words using a <span class="highligh
 Sometimes it is nice to display information side-by-side
 
 Here is some text describing interesting features of the data
+
+:::{.fragment}
+`.fragments` are another way to reveal text incrementally
+:::
 :::
 
 ::: {.column width="50%"}
 
-:::{.figure-box .center}
+::: {.figure-box .center}
 | fruit  | price  |
 |--------|--------|
 | apple  | 2.05   |
 | pear   | 1.37   |
 | orange | 3.09   |
+:::
+
+::: {.fragment}
+::: {.callout-note}
+## Callout Box
+
+Consider adding a note with an alaska-themed callout box
+:::
 :::
 
 :::

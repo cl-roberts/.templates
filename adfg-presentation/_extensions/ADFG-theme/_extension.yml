@@ -10,5 +10,6 @@ contributes:
       format-resources:
         - SoA-background.jpg
         - ADFG-logo.png
+        - AK-flag.svg
 echo: false
 eval: true
