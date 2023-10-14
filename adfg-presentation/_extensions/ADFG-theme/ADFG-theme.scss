@@ -214,6 +214,7 @@ hr {
     .slide {
       figcaption {
         font-size: $presentation-font-size-root*.5;
+        font-weight: bold;
       }
     }
   }
@@ -228,6 +229,7 @@ hr {
   caption {
     text-align: left;
     caption-side: bottom;
+    font-weight: bold;
   }
   th {
     color: $theme-navy !important;
@@ -253,15 +255,15 @@ hr {
 
 // custom callout box
 .reveal div.callout.callout-style-default {
-  background-color: $theme-offwhite;
+  background-color: lighten($theme-gold, 50%);
 }
 
 .reveal div.callout.callout-note {
   color: $theme-navy;
-  border-color: $theme-offwhite;
+  border-color: lighten($theme-gold, 50%);
   border-left-color: $theme-gold !important;
   .callout-title {
-    color: $theme-offwhite;
+    color: lighten($theme-gold, 50%);
     background-color: $theme-navy;
     padding-left: 7.5%;
   }
