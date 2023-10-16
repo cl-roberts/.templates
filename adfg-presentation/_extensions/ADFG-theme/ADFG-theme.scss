@@ -265,11 +265,8 @@ hr {
   .callout-title {
     color: lighten($theme-gold, 50%);
     background-color: $theme-navy;
-    padding-left: 7.5%;
   }
   .callout-icon::before {
     background-image: $icon !important;
-    padding-left: 40%;
-    scale: 2 1.75;
   }
 }
