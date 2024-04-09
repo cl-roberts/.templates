@@ -1,5 +1,5 @@
 ---
-title: ADFG Presentation 
+title: ADFG-themed Presentation 
 subtitle: A Very Important Communication of Fish and/or Wildlife Science and/or Policy
 author:
   - name: John Doe
@@ -9,7 +9,7 @@ author:
     email: jane.doe@alaska.gov
     affiliations: Sport Fish
 format:
-  ADFG-theme-revealjs: default 
+  ADFG-presentation-revealjs: default 
 date: last-modified
 date-format: long
 # fragments: false        # uncomment to toggle off incrementation

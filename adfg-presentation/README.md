@@ -1,4 +1,4 @@
-# SoA-theme
+# ADFG-presentation
 
 This repository contains a theme and template for making Alaska Department of Fish \& Game
 (ADF\&G) styled presentations slides
@@ -16,7 +16,7 @@ To install and use the theme, navigate to your projects root directory and
 execute the following shell command:
 
 ```bash
-quarto install extension cl-roberts/ADFG-theme
+quarto install extension cl-roberts/ADFG-presentation
 ```
 
 This will create an `_extensions` subdirectory in your local file system which
@@ -26,13 +26,13 @@ the theme in a Reveal.js presentation simply add the following lines to your
 
 ```yaml
 format:
-  ADFG-theme-revealjs: default 
+  ADFG-presentation-revealjs: default 
 ```
 
 Alternatively, the following shell command
 
 ```bash
-quarto use template cl-roberts/ADFG-theme
+quarto use template cl-roberts/ADFG-presentation
 ```
 
 will install the extension and create a template qmd file that you can use as a 
@@ -41,7 +41,7 @@ starting place for your presentation.
 ## Customization
 
 If this theme does not meet your needs, I recommend customizing the `css` code
-contained in `_extensions\ADFG-theme\ADFG-theme.scss`
+contained in `_extensions\ADFG-presentation\ADFG-presentation.scss`
 
 ## Restrictions on using the ADF\&G logo
 
