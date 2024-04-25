@@ -282,3 +282,12 @@ hr {
     background-image: $icon !important;
   }
 }
+
+// adjust list properites
+ul {
+  font-size: $presentation-font-size-root*.85;
+}
+
+ul ul {
+  font-size: $presentation-font-size-root*.65;
+}
