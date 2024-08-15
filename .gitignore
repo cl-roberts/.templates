@@ -1,3 +1,6 @@
 *.html
 *.docx
+*.md
+*.json
+!README.md
 !wordtemplate*
