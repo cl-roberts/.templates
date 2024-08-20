@@ -9,7 +9,7 @@ author:
     email: jane.doe@alaska.gov
     affiliations: Sport Fish
 format:
-  ADFG-presentation-revealjs: default 
+  adfg-presentation-revealjs: default 
 date: last-modified
 date-format: long
 # fragments: false        # uncomment to toggle off incrementation
