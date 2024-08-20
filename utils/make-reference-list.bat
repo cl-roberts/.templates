@@ -1,9 +1,9 @@
 @ echo off
 
 :all-files
-set pandoc-call=pandoc --citeproc references.bib --metadata title="References" 
+set pandoc-call=pandoc --citeproc ../references.bib --metadata title="References" 
 if "%2"=="" (
-    set csl=--csl=american-fisheries-society.csl 
+    set csl=--csl=../american-fisheries-society.csl 
     goto :choose-output
 )
 set csl=--csl=%2
@@ -35,7 +35,7 @@ exit /b 0
 exit /b 0
 
 :docx-output
-%pandoc-call% %csl% --reference-doc=wordtemplate.docx -o reference-list.docx
+%pandoc-call% %csl% --reference-doc=../wordtemplate.docx -o reference-list.docx
 exit /b 0
 
 :md-output
