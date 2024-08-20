@@ -1,6 +1,6 @@
 # adfg-presentation
 
-This repository contains a theme and template for making Alaska Department of Fish \& Game
+This directory contains a theme and template for making Alaska Department of Fish \& Game
 (ADF\&G) styled presentations slides
 using Quarto Reveal.js. This theme has the same `.css` attributes which style 
 State of Alaska websites and loosely complies with State of Alaska
