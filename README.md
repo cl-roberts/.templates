@@ -2,7 +2,8 @@
 
 This repository keeps styled, mostly quarto-based, document templates: 
 
-- `adfg-presentation`: A custom revealjs template for ADFG-themed slide shows
+- `adfg-presentation`: A `revealjs` template for ADFG-themed slide shows
+- `uw-homework`: A `typst` template for homework assignments
 
 Also included are pandoc utilities such as word reference docs, customized csl's, 
 etc.:

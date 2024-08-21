@@ -10,7 +10,7 @@ time.
 ## Installing
 
 ```bash
-quarto use template cl-roberts/.templates/uw-template
+quarto use template cl-roberts/.templates/uw-homework
 ```
 
 This will install the homework template and create an example qmd file
