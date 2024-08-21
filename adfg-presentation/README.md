@@ -16,7 +16,7 @@ To install and use the theme, navigate to your projects root directory and
 execute the following shell command:
 
 ```bash
-quarto install extension cl-roberts/adfg-presentation
+quarto install extension cl-roberts/.templates/adfg-presentation
 ```
 
 This will create an `_extensions` subdirectory in your local file system which
