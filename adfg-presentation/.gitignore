@@ -48,8 +48,8 @@ po/*~
 # RStudio Connect folder
 rsconnect/
 
-# html files
-*.html
+# template html output
+template.html
 
 # directories storing rendering files
 README_files/*

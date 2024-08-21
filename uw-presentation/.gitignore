@@ -65,3 +65,5 @@ template_files/*
 /rainier.jpg
 /Signature_Stacked_Purple_RGB.png
 
+# r script for making template gif
+make-template-example-gif.r
