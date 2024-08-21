@@ -1,0 +1,179 @@
+---
+title: UW-themed Presentation 
+subtitle: A Very Interesting Communication of Quantitative Ecology Science
+author:
+  - name: John Doe
+    email: johndoe@uw.edu
+    affiliations: PhD Student, QERM
+  - name: Jane Doe
+    email: janedoe@uw.edu
+    affiliations: PhD Student, SAFS
+format:
+  uw-presentation-revealjs:
+    code-line-numbers: false
+date: last-modified
+date-format: long
+fragments: false        # uncomment to toggle off incrementation
+incremental: false 
+---
+
+## Customize Slide Background
+
+A number of UW-themed background images are available to use as slide backgrounds
+(credit to the [University Photo Collection Site](https://uwphotos.smugmug.com/))
+
+::: {layout-ncol=3 layout-valign="center"}
+![rainier.jpg](rainier.jpg){width=70%}
+
+![rainier-close.jpg](rainier-close.jpg){width=70%}
+
+![cherry-blossoms.jpg](cherry-blossoms.jpg){width=70%}
+
+![cherry-blossoms-fountain.jpg](cherry-blossoms-fountain.jpg){width=70%}
+
+![harbor.jpg](harbor.jpg){width=70%}
+
+![harbor-seagull.jpg](harbor-seagull.jpg){width=70%}
+:::
+
+## Customize Slide Background {background-image='rainier-close.jpg'}
+
+To use a different background for a particular slide, simply change the `background-image`
+attribute in the slide heading 
+
+```default
+## Customize Slide Background {background-image='rainier-close.jpg'}
+```
+
+:::{.fragment}
+To change the global default, replace the `.jpg` file in the following code snippet
+from the `uw-presentation.scss` file with the image of your choosing
+
+```{.scss code-line-numbers="2"}
+.slide-background {
+  background-image: url(../../../../../cherry-blossoms.jpg);
+  background-size: cover !important;
+}
+```
+:::
+
+## Header 2 with banner {.banner-header}
+
+### Header 3
+
+#### Header 4
+
+Create a slide with class `.banner-header` using the following syntax
+
+```default
+## Banner Title {.banner-header}
+```
+
+The following slide's header as horizontal rule but no banner
+
+```default
+## Banner Title {.rule-header}
+```
+
+---
+
+## Header 2 with rule, no banner  {.rule-header .r-stretch}
+
+::: {.text-box}
+For increased text visibility, use a div with class `.text-box`.
+:::
+
+```default
+::: {.text-box}
+For increased text visibility, use a div with class `.text-box`.
+:::
+```
+
+::: {.emphasis-box}
+For further emphasis, use a div with class `.emphasis-box`.
+:::
+
+```default
+::: {.emphasis-box}
+For further emphasis, use a div with class `.emphasis-box`.
+:::
+```
+
+---
+
+## Header 2, no rule or banner
+
+::: {.text-box .incremental}
+Lists are a great way to:
+
+  * itemize information in an easily digestible way
+  * reveal information incrementally to not overwhelm your audience with too much information at once
+    - use `.incremental` class in div attributes
+  * prompt yourself when presenting
+
+Highlight [key words]{.highlight} using a [span]{.highlight} with class `.highlight`
+:::
+
+---
+
+::: {.center}
+(*this is a slide with no header or content*)
+:::
+
+---
+
+## Columns
+
+:::: {.columns}
+
+::: {.column width="40%" .text-box}
+Sometimes it is nice to display information side-by-side
+
+Here is some text describing interesting features of the data
+
+:::{.fragment style="font-size: 24pt"}
+`.fragments` are another way to reveal text incrementally
+:::
+:::
+
+::: {.column width="50%"}
+
+::: {.figure-box .center}
+| fruit  | price  |
+|--------|--------|
+| apple  | 2.05   |
+| pear   | 1.37   |
+| orange | 3.09   |
+:::
+
+::: {.fragment}
+::: {.callout-note}
+## Callout Box
+
+Consider adding a note with an cherry blossom-accented callout box
+:::
+:::
+
+:::
+
+::::
+
+---
+
+::: {.figure-box .center}
+
+``` {r}
+#| fig-align: center
+#| fig-cap: Use the `.figure-box` class to create a white box to display white- or transparent-background tables and figures
+
+library(ggplot2)
+ggplot(data = mtcars) +
+  geom_point(aes(x = wt, y = mpg, shape = factor(cyl)), size = 2) +
+  theme_bw(base_size = 20)
+```
+
+:::
+
+---
+
+

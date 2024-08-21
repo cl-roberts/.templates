@@ -1,0 +1,311 @@
+/*-- scss:defaults --*/
+
+// UW primary colors
+$theme-husky-purple: #32006e;
+$theme-spirit-purple: #4b2e83;
+$theme-husky-gold: #e8e3d3;
+$theme-heritage-gold: #85754d;
+$theme-spirit-gold: #ffc700;
+
+// UW accent colors
+$theme-accent-green: #aadb1e;
+$theme-accent-teal: #2ad2c9;
+$theme-accent-pink: #e93cac;
+$theme-accent-lavender: #c5b4e3;
+
+// UW neutral colors
+$theme-neutral-black: #000000;
+$theme-neutral-white: #ffffff;
+$theme-neutral-grey: #d5d8de;
+$theme-transparent: #ffffff00;
+
+
+// fonts
+
+@import url(https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap);
+
+// UW primary fonts
+$font-family-sans-serif: 'Encode Sans', 'Nunito Sans', 'Open Sans' !default;
+$font-family-serif: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$presentation-font-size-root: 40px;
+
+// colors
+$body-color: $theme-neutral-black !default;
+$body-bg: $theme-neutral-white !default;
+$code-color: $theme-accent-pink !default;
+$link-color: $theme-accent-pink !default;
+
+// headings
+// $presentation-heading-font: $font-family-sans-serif !default;
+// $presentation-heading-color: $body-color !default;
+
+// code blocks
+$code-block-bg: $body-bg !default;
+$code-block-border-color: $body-bg !default;
+$code-block-font-size: $presentation-font-size-root*.5 !default;
+
+// borders
+$border-color: $theme-spirit-gold;
+$border-width: 5px;
+
+// callout icon
+$icon: url('../../../../../cherry-blossom.svg') !default;
+
+
+/*-- scss:rules --*/
+
+// mixins
+
+// blue box background for slide text
+@mixin text-box {
+  background-color: $theme-spirit-purple;
+  opacity: .75;
+  border-radius: 30px;
+  color: $theme-neutral-white;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+// custom logo position on title slide
+@mixin logo {
+  background-image: url(../../../../../Signature_Stacked_Purple_RGB.png);
+  background-size: 23%;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  padding-bottom: 2%;
+}
+
+// horizontal rule
+@mixin horizontal-rule {
+  content: "";
+  display: block;
+  border: none;
+  background-color: $theme-spirit-gold;
+  color: $theme-spirit-gold;
+  height: 5px;
+  margin: 0px 0px 0px 0px;
+}
+
+// center content
+@mixin center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+// horizontal rule
+hr {
+  @include horizontal-rule
+}
+
+// title slide attributes
+#title-slide {
+    display: grid !important;
+    height: 80% !important;
+    padding-bottom: 5%;
+    text-align: left !important;
+    .title {
+      font-size: $presentation-font-size-root*2;
+      text-align: left !important;
+    }
+    .subtitle { 
+      @include text-box;
+      opacity: 1 !important;
+      background-color: $theme-husky-purple !important;
+      font-size: $presentation-font-size-root*.9;
+      font-family: 'Nunito Sans' !important;
+      text-align: center;
+    }
+    .quarto-title-affiliation,
+    .quarto-title-author-email {
+      font-size: $code-block-font-size;
+      font-weight: 700;
+    }
+    .quarto-title-authors {
+      justify-content: left !important;
+      font-size: $presentation-font-size-root;
+      .quarto-title-author {
+        text-align: right;
+      }
+      @include logo;
+    }
+    .date::before {
+      @include horizontal-rule;
+  }
+  .date {
+    text-align: right;
+  }
+}
+
+.slides {
+  h1 {
+    @include center;
+    font-family: 'Encode Sans' !important;
+    font-weight: 800;
+  }
+  h2 {
+    font-family: 'Nunito Sans' !important;
+    font-weight: 800;
+    color: $theme-husky-purple;
+  }
+  h3 {
+    font-family: 'Nunito Sans' !important;
+    font-weight: 600;
+  }
+  h4 {
+    font-family: 'Nunito Sans' !important;
+    font-style: italic;
+  }    
+  p {
+    font-family: 'Open Sans' !important;
+  }  
+}
+
+// slide class with banner header
+.banner-header {
+  h2::before {
+    @include horizontal-rule;
+    width: 200vw;
+    position: relative;
+    left: -20vw;
+  }
+  h2 {
+    color: $theme-neutral-white !important;
+    background-color: $theme-husky-purple !important;
+    width: 200vw;
+    position: relative;
+    left: -20vw;
+    padding-left: 20vw;
+    padding-right: 20vw;
+  }  
+  h2::after {
+    @include horizontal-rule;
+    width: 200vw;
+    position: relative;
+    left: -20vw;
+  }
+}
+
+// slide class with a simple horizontal rule under header
+.rule-header {
+  h2::after {
+    @include horizontal-rule;
+    background-color: $theme-husky-purple;
+  }
+}
+
+// apply UW background image to all slides
+.slide-background {
+  background-image: url(../../../../../cherry-blossoms.jpg);
+  background-size: cover !important;
+}
+
+// applies transparency to html and pdf print
+.slide-background:after {
+  content: '\A';
+  position: absolute;
+  width:100%; height:100%;
+  top:0; left:0;
+  background:rgba(255, 255, 255, 0.85);
+}
+
+// text box class
+.text-box {
+  @include text-box;
+  box-shadow: 0px 0px 2.5px 5px $theme-spirit-purple;
+}
+
+// text box with emphasis
+.emphasis-box {
+  @include text-box;
+  border: 5pt solid $theme-spirit-gold;
+}
+
+// class to center content in slide or column
+.center {
+  @include center;
+}
+
+// white box as a backdrop to tables and figures
+.figure-box {
+  background-color: $theme-neutral-white;
+  border-radius: 30px;
+  color: $theme-neutral-black;
+  padding-left: 3%;
+  padding-right: 3%;
+  box-shadow: 0px 0px 7.5px 10px $theme-neutral-white;
+}
+
+// custom text highlighting
+.highlight {
+  background-color: $theme-spirit-gold;
+  color: $theme-husky-purple;
+}
+
+// make figure captions smaller
+.reveal {
+  .slides {
+    .slide {
+      figcaption {
+        font-size: $presentation-font-size-root*.5;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// custom table attributes
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: $theme-neutral-black !important;
+  caption {
+    text-align: left;
+    caption-side: bottom;
+    font-weight: bold;
+  }
+  th {
+    color: $theme-neutral-black !important;
+  }
+}
+.reveal table, tbody, tr, td, th {
+  border: none !important;
+}
+.reveal thead {
+  border-top: 1px solid $theme-neutral-black !important;
+}
+.reveal tbody {
+  border-top: 1px solid $theme-neutral-black !important;
+  border-bottom: 1px solid $theme-neutral-black !important;
+}
+
+// custom progress bar
+.reveal .progress {
+  background: $theme-transparent;
+  color: $theme-spirit-gold;
+  height: .5%;
+}
+
+// custom callout box
+.reveal div.callout.callout-style-default {
+  background-color: lighten($theme-spirit-gold, 50%);
+}
+
+.reveal div.callout.callout-note {
+  color: $theme-neutral-black;
+  border-color: lighten($theme-spirit-gold, 50%);
+  border-left-color: $theme-spirit-gold !important;
+  .callout-title {
+    color: lighten($theme-spirit-gold, 50%);
+    background-color: $theme-husky-purple;
+  }
+  .callout-icon::before {
+    background-image: $icon !important;
+  }
+}
