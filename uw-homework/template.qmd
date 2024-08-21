@@ -85,6 +85,7 @@ The solution to this easy problem is shown in @fig-plot.
 
 ```{r}
 require(ggplot2)
+if (!dir.exists("images")) dir.create("images")
 example_plot <- ggplot(cars) +
     geom_point(aes(x = speed, y = dist))
 ggsave("plot.svg", path = "images", device = "svg")
