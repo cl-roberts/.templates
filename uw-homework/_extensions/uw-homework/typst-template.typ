@@ -1,15 +1,4 @@
 
-// This is an example typst template (based on the default template that ships
-// with Quarto). It defines a typst function named 'article' which provides
-// various customization options. This function is called from the 
-// 'typst-show.typ' file (which maps Pandoc metadata function arguments)
-//
-// If you are creating or packaging a custom typst template you will likely
-// want to replace this file and 'typst-show.typ' entirely. You can find 
-// documentation on creating typst templates and some examples here: 
-//   - https://typst.app/docs/tutorial/making-a-template/
-//   - https://github.com/typst/templates
-
 #let uw-homework-article(
   title: none,
   course: none,
@@ -93,9 +82,20 @@
   text(font: "Cascadia Code")[#code],
 )
 
-#let proof(body) = block(spacing: 11.5pt, {
-  emph[Proof.]
-  [ ] + body
-  h(1fr)
-  box(scale(160%, origin: bottom + right, sym.square.stroked))
-})
+#let support(facts) = {
+  set text(style: "italic")
+  set par(leading: .85em)
+  align(right, [#facts])
+}
+
+#let proof(equation, ..facts) = {
+  set text(style: "italic")
+  let fact = facts
+    .pos()
+    .join(linebreak())
+  grid(columns: (1fr, 4fr, 1fr),
+    [],
+    equation,
+    support([#fact])
+  )
+}
