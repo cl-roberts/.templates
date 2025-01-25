@@ -79,7 +79,7 @@
 }
 
 #show raw: code => box(
-  text(font: "Cascadia Code")[#code],
+  text(size: 8pt)[#code],
 )
 
 #let support(facts) = {
